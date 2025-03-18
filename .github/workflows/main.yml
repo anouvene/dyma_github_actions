@@ -1,7 +1,7 @@
-name: Mon premier workflow
-on: [push]
-jobs:
+name: Mon premier workflow # Nom du workflow
+on: [push] # Le wf sera déclenché à chaque évenement push vers le dépôt
+jobs: # Définit le group de jobs à exécuter, ici un seul job appelé "say-hello"
   say-hello:
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo "Hello, World!"
+    runs-on: ubuntu-latest # Job exécuté dans un conteneur avec la dernière version d'Ubuntu disponible
+    steps: # liste d'étapes au sein de ce job
+      - run: echo "Hello, World!" # Cette étape exécute la commande echo pour afficher "Hello, World!"
