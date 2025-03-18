@@ -1,7 +1,7 @@
 name: Second workflow
 on: [push]
 jobs:
-  say-hello:
+  checkout:
     runs-on: ubuntu-latest
     steps:
       - run: ls
