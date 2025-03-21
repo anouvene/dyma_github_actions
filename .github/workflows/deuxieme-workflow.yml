@@ -1,11 +1,10 @@
-name: Second workflow
-on: [push]
-jobs:
-  checkout:
-    runs-on: ubuntu-latest
-    steps:
-      - run: ls
-      - uses: actions/checkout@v4 # On utilise ici une action pour récupérer le contenu répertoire git 
-                                  # sans qu'on ait besoin de taper cla commande git clone
-      - run: ls
-    
+#name: Second workflow
+#on: [push]
+#jobs:
+#  checkout:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - run: ls
+#      - uses: actions/checkout@v4 # On utilise ici une action pour récupérer le contenu répertoire git 
+#        # sans qu'on ait besoin de taper cla commande git clone
+#      - run: ls
