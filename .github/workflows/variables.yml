@@ -1,6 +1,5 @@
 name: Variables
 on: [push]
-
 env:
   NIVEAU_WORKFLOW: "Je suis une variable de workflow"
 
