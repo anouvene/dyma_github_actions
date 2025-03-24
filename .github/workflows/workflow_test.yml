@@ -1,4 +1,5 @@
 name: Exemple de dépendances entre jobs
+on: [push]
 
 jobs:
   job1:
