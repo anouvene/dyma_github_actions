@@ -12,7 +12,7 @@ jobs:
     steps:
       - name: Étape 1
         env:
-          NIVEAU_ETAPE: "Je suis une variable d'étape et ${{ jobs.*.NIVEAU_JOB }}"
+          NIVEAU_ETAPE: "Je suis une variable d'étape et ${{ jobs.mon_job.env.NIVEAU_JOB }}"
         run: |
           echo "$NIVEAU_WORKFLOW"
           echo "$NIVEAU_JOB"
