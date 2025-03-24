@@ -1,4 +1,4 @@
-name: Exemple de dépendances entre jobs
+name: Exemple de dépendances entre steps
 on: [push]
 
 jobs :
