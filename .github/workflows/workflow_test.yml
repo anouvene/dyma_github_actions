@@ -11,6 +11,6 @@ jobs :
       - name : Je suis étape 2
         id : etape2
         run : echo steps.etape1.ouputs.output_var1 should be poire
-        if: steps.etape1.ouputs.output_var1 != 'poire'
+        if: ${{ steps.etape1.ouputs.output_var1 != 'poire' }}
     
 
