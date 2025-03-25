@@ -5,15 +5,12 @@ jobs :
   premier_job :
     runs-on : ubuntu-latest
     steps :
-      - name : définir une sortie
+      - name : Je suis étape 1
         id : etape1
-        run : echo "output_var=Bonjour" >> $GITHUB_OUTPUT
-    outputs :
-      ma_sortie : ${{ steps.etape1.outputs.output_var }}
+        run : echo "output_var1=pomme" >> $GITHUB_OUTPUT
+      - name : Je suis étape 2
+        id : etape2
+        run : echo steps.etape1.ouputs.output_var1 should be poire
+        if: steps.etape1.ouputs.output_var1 != poire
+    
 
-  deuxieme_job :
-    needs : premier_job
-    runs-on : ubuntu-latest
-    steps :
-      - name : utiliser la sortie du premier job
-        run : echo "La valeur de la sortie du premier job est ${{ needs.premier_job.outputs.ma_sortie }}"
