@@ -10,7 +10,7 @@ jobs :
         run : echo "output_var1=pomme" >> $GITHUB_OUTPUT
       - name : Je suis étape 2
         id : etape2
-        run : echo $output_var1 should be poire
+        run : echo $GITHUB_OUTPUT should be poire
         if: ${{ steps.etape1.ouputs.output_var1 != 'poire' }}
     
 
