@@ -1,16 +1,10 @@
-name: Exemple de dépendances entre steps
+name: Exemple de notification d'erreur
 on: [push]
 
-jobs :
-  premier_job :
-    runs-on : ubuntu-latest
-    steps :
-      - name : Je suis étape 1
-        id : etape1
-        run : echo "output_var1=pomme" >> $GITHUB_OUTPUT
-      - name : Je suis étape 2
-        id : etape2
-        run : echo $GITHUB_OUTPUT should be poire
-        if: ${{ steps.etape1.ouputs.output_var1 != 'poire' }}
-    
+jobs:
+  exemple_error:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Afficher un message d'erreur
+        run: echo "::error file=exemple.txt,line=1,col=5::Un message d'erreur"
 
