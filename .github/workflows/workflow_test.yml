@@ -1,19 +1,16 @@
-name: gérer les échecs dans la matrice
+name: nombre maximal de travaux parallèles
+
 on: push
 
 jobs:
-  test:
-    runs-on: ubuntu-latest
-    continue-on-error: ${{ matrix.experimental }}
+  example_matrix:
     strategy:
-      fail-fast: true
+      max-parallel: 2
       matrix:
-        version: [6, 7, 8]
-        experimental: [false]
-        include:
-          - version: 7
-            experimental: true
+        version: [10, 12, 14]
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
     steps:
+    - run: echo "os est ${{ matrix.os }}"
     - run: echo "version est ${{ matrix.version }}"
-    - run: echo "experimental est ${{ matrix.experimental }}"
     - run: sleep 5
