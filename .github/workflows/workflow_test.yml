@@ -1,10 +1,22 @@
-name: Exemple de notification
+name: Exemple de build d'un projet Vite
 on: [push]
 
+defaults:
+  run:
+    working-directory: ./vite-project
+
 jobs:
-  exemple_error:
+  build:
     runs-on: ubuntu-latest
+    
     steps:
-      - name: Afficher un message de notice
-        run: echo "::notice file=exemple.txt,line=1,col=5::Un message de notification"
+      - name: Install NodeJS
+        uses: actions/setup-node@v4
+
+      - name: Fetch directory
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: npm install
+
 
