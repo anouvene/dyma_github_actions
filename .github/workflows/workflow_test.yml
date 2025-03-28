@@ -8,3 +8,15 @@ jobs:
     - name: Résumé simple
       run: |
         echo "### Bonjour tout le monde ! :rocket:" >> $GITHUB_STEP_SUMMARY
+  
+  matrix_summary:
+    needs: afficher_resume
+    runs-on: ubuntu-latest
+    steps:
+      - name: Résumé de l'exemple job avec Matrix
+        run: $GITHUB_STEP_SUMMARY
+      - run: |
+          echo "Pour chaque combinaison de la matrix OS/Version:" >> $GITHUB_STEP_SUMMARY
+          echo "1. Affichache de l'OS" >> $GITHUB_STEP_SUMMARY
+          echo "2. Version de l'OS" >> $GITHUB_STEP_SUMMARY
+          echo "3. Puis pause de 5 secondes entre chaque job " >> $GITHUB_STEP_SUMMARY
