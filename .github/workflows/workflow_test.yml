@@ -1,33 +1,10 @@
-name: nombre maximal de travaux parallèles
-
+name: Test job summary
 on: push
 
 jobs:
-  matrix_example:
-    strategy:
-      max-parallel: 2
-      matrix:
-        version: [10, 12, 14]
-        os: [ubuntu-latest, windows-latest]
-    runs-on: ${{ matrix.os }}
-    steps:
-    - run: echo "os est ${{ matrix.os }}"
-    - run: echo "version est ${{ matrix.version }}"
-    - run: sleep 5
-
-  matrix_summary:
-    needs: matrix_example
+  afficher_resume:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
     steps:
-      - name: Résumé de l'exemple job avec Matrix
-        run: $GITHUB_STEP_SUMMARY
-      - run: |
-          echo "Pour chaque combinaison de la matrix OS/Version:" >> $GITHUB_STEP_SUMMARY
-          echo "1. Affichache de l'OS" >> $GITHUB_STEP_SUMMARY
-          echo "2. Version de l'OS" >> $GITHUB_STEP_SUMMARY
-          echo "3. Puis pause de 5 secondes entre chaque job " >> $GITHUB_STEP_SUMMARY
-
-    
-      
+    - name: Résumé simple
+      run: |
+        echo "### Bonjour tout le monde ! :rocket:" >> $GITHUB_STEP_SUMMARY
