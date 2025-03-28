@@ -14,3 +14,11 @@ jobs:
     - run: echo "os est ${{ matrix.os }}"
     - run: echo "version est ${{ matrix.version }}"
     - run: sleep 5
+
+    - name: Résumé de l'exemple job avec Matrix
+      run: |
+        echo "Pour chaque combinaison de la matrix OS/Version:" >> $GITHUB_STEP_SUMAMRY
+        echo "1. Affichache de l'OS" >> $GITHUB_STEP_SUMAMRY
+        echo "2. Version de l'OS" >> $GITHUB_STEP_SUMAMRY
+        echo "3. Puis pause de 5 secondes entre chaque job " >> $GITHUB_STEP_SUMAMRY
+      
