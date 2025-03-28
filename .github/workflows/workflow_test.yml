@@ -10,7 +10,6 @@ jobs:
         echo "### Bonjour tout le monde ! :rocket:" >> $GITHUB_STEP_SUMMARY
   
   matrix_summary:
-    needs: afficher_resume
     runs-on: ubuntu-latest
     steps:
       - name: Résumé de l'exemple job avec Matrix
