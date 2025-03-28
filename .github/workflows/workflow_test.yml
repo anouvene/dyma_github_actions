@@ -1,13 +1,12 @@
 name: Test job summary
 on: push
-
 jobs:
-  afficher_resume:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Résumé simple
-      run: |
-        echo "### Bonjour tout le monde ! :rocket:" >> $GITHUB_STEP_SUMMARY
+#   afficher_resume:
+#     runs-on: ubuntu-latest
+#     steps:
+#     - name: Résumé simple
+#       run: |
+#         echo "### Bonjour tout le monde ! :rocket:" >> $GITHUB_STEP_SUMMARY
   
   matrix_summary:
     runs-on: ubuntu-latest
