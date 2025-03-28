@@ -18,6 +18,8 @@ jobs:
   matrix_summary:
     needs: matrix_example
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Résumé de l'exemple job avec Matrix
         run: $GITHUB_STEP_SUMMARY
