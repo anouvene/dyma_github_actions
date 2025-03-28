@@ -20,7 +20,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Résumé de l'exemple job avec Matrix
-        run: |
+        run: $GITHUB_STEP_SUMMARY
+      - run: |
           echo "Pour chaque combinaison de la matrix OS/Version:" >> $GITHUB_STEP_SUMMARY
           echo "1. Affichache de l'OS" >> $GITHUB_STEP_SUMMARY
           echo "2. Version de l'OS" >> $GITHUB_STEP_SUMMARY
